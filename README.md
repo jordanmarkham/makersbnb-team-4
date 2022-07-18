@@ -4,28 +4,28 @@ Once a date has been booked and approved, the available dates should no longer b
 
 -----MVP-----
 
-As a User/Host
+[x] As a User/Host
 So that I can share my available Spaces
 I would like to be able to add a Space to MakersBnb
 
-As a User/Host
+[x] As a User/Host
 So that my Spaces are identifiable
 I would like to be able to give my Space a name
 
-As a User/Host
+[x] As a User/Host
 So I can describe my Spaces
 I would like to be able to add a short description to my Spaces
 
-As a User/Host
+[x] As a User/Host
 So I can offer competitive prices to others
 I would like to be able to give my Spaces a price, per night
 
-As a User/Viewer
+[x] As a User/Viewer
 So that I can see all live Spaces
 I would like to able to view a list of all Spaces
 
 -----EXTENSION-----
 
-As a User/Viewer
+[] As a User/Viewer
 So that I can choose which Space to book based on when I'm free
 I would like the Spaces to show which dates are available

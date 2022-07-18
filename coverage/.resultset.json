@@ -1,0 +1,170 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/jordanmarkham/Desktop/Projects/makersbnb-team-4/app.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/jordanmarkham/Desktop/Projects/makersbnb-team-4/lib/space.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          5,
+          5,
+          null,
+          0,
+          null,
+          null,
+          5,
+          11,
+          null,
+          null,
+          1,
+          6,
+          6,
+          null,
+          0,
+          null,
+          null,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/jordanmarkham/Desktop/Projects/makersbnb-team-4/spec/features/index_page_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jordanmarkham/Desktop/Projects/makersbnb-team-4/spec/features/new_page_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jordanmarkham/Desktop/Projects/makersbnb-team-4/spec/features/spaces_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jordanmarkham/Desktop/Projects/makersbnb-team-4/spec/features/test_page_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jordanmarkham/Desktop/Projects/makersbnb-team-4/spec/index_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1658161783
+  }
+}
