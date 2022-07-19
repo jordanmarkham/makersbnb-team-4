@@ -9,7 +9,7 @@ class Space
     end
 
     result = connection.exec "SELECT * FROM spaces"
-    return result.map{ |elem| "Name: #{elem["name"]} | Description: #{elem["description"]} | £/Night: #{elem["price_per_night"]}"}.reverse
+    return result.map{ |row| "Name: #{row["name"]} | Description: #{row["description"]} | £/Night: #{row["price_per_night"]}"}.reverse
   end
 
   def self.create(name, description, price_per_night)
