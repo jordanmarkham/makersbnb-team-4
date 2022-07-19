@@ -5,12 +5,18 @@ require 'sinatra/reloader'
 require_relative 'lib/space'
 
 class MakersBnb < Sinatra::Base
+  enable :sessions
+
   configure :development do
     register Sinatra::Reloader
   end
 
   get '/test' do
     'Test page'
+  end
+
+  get '/login' do
+    erb(:login)
   end
 
   get '/' do
