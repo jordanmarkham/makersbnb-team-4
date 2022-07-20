@@ -24,8 +24,25 @@ I would like to be able to give my Spaces a price, per night
 So that I can see all live Spaces
 I would like to able to view a list of all Spaces
 
+[ ] As a User/Viewer
+So that I can confirm/book Spaces with my name and details
+I would like to be able to create a user account
+
+^ As a User/Host
+So that people can find other Spaces I am hosting
++ So that I can host multiple Spaces in my name
+I would like to be able to create a user account
+
 -----EXTENSION-----
 
-[] As a User/Viewer
+[ ] As a User/Viewer
 So that I can choose which Space to book based on when I'm free
 I would like the Spaces to show which dates are available
+
+[ ] As a User/Viewer
+So that I know when Spaces are unavailable on certain days
+I would like unavailable dates to be no longer clickable
+
+[ ] As a User/Host
+So that I can correct mistakes in my listings
+I would like to be able to edit the details of my Spaces
