@@ -24,7 +24,7 @@ I would like to be able to give my Spaces a price, per night
 So that I can see all live Spaces
 I would like to able to view a list of all Spaces
 
-[ ] As a User/Viewer
+[x] As a User/Viewer
 So that I can confirm/book Spaces with my name and details
 I would like to be able to create a user account
 

@@ -14,9 +14,9 @@ describe '.all' do
 
     spaces = Space.all
 
-    expect(spaces).to include('Name: New Space 1! | Description: Description 1 | £/Night: 100')
-    expect(spaces).to include('Name: New Space 2! | Description: Description 2 | £/Night: 200')
-    expect(spaces).to include('Name: New Space 3! | Description: Description 3 | £/Night: 300')
+    expect(spaces).to include('Name: New Space 1! | Description: Description 1 | £/Night: 100 | Posted by: ')
+    expect(spaces).to include('Name: New Space 2! | Description: Description 2 | £/Night: 200 | Posted by: ')
+    expect(spaces).to include('Name: New Space 3! | Description: Description 3 | £/Night: 300 | Posted by: ')
   end
 end
 
@@ -25,6 +25,6 @@ describe '.create' do
     connection = PG.connect(dbname: 'makersbnb_test')
     Space.create('New Space!', 'Description', '1000')
     spaces = Space.all
-    expect(spaces).to include('Name: New Space! | Description: Description | £/Night: 1000')
+    expect(spaces).to include('Name: New Space! | Description: Description | £/Night: 1000 | Posted by: ')
   end
 end

@@ -1,0 +1,26 @@
+<div style="text-align: center">
+  <% if @success %>
+    <h2>Thank you for registering with us, <%= session['username'] %>.</h2>
+  <% end %>
+
+  <h1>MakersBnb:</h1>
+
+  <% if session['logged_in?'] == true %>
+    <form action="/logout" method="post">
+      <button value="Submit" type="submit">Logout</button>
+    </form>
+  <% else %>
+    <form action="/signup" method="get">
+      <button value="Submit" type="submit">Login or Sign Up</button>
+    </form>
+<% end %>
+
+  <form action="/spaces/new" method="post">
+    <button value="Submit" type="submit">Create Listing</button>
+  </form>
+
+  <h3>All Spaces:</h3>
+
+  <%= @all_spaces.join("<hr>") %>
+
+</div>

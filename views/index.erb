@@ -1,12 +1,31 @@
-<div style="text-align: center">
-  <h1>MakersBnb:</h1>
-
-  <form action="/new" method="post">
-    <button value="Submit" type="submit">Create Listing</button>
+<div style="text-align: right">
+  <form>
+    <button value="About" type="submit"></button>
+    <button value="Sign Up" type="submit"></button>
+    <button value="Sign In" type="submit"></button>
   </form>
-
-  <h3>All Spaces:</h3>
-
-  <%= @all_spaces.join("<hr>") %>
-
 </div>
+
+<div>
+<h1>Feel at home, anywhere</h1>
+</div>
+
+<div style="text-align: center">
+  <h1>Sign up to MakersBnb</h1>
+
+  <form action="/signup" method="post">
+    <label for="username">Username</label>
+    <input name="username" type="text" placeholder="Enter username..."/>
+    <label for="firstname">First Name</label>
+    <input name="firstname" type="text" placeholder="Enter Your First Name..."/>
+    <label for="lastname">Last Name</label>
+    <input name="lastname" type="text" placeholder="Enter Your Last Name..."/>
+    <label for="email">Email</label>
+    <input name="email" type="email" placeholder="Email"/>
+    <label for="password">Password</label>
+    <input name="password" type="password" placeholder="Password"/>
+    <label for="password_confirmation">Confirm Password</label>
+    <input name="password_confirmation" type="password" placeholder="Confirm Password"/>
+    <button value="Submit" type="submit">Sign up</button>
+</form>
+<div>
