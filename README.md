@@ -30,7 +30,7 @@ I would like to be able to create a user account
 
 ^ As a User/Host
 So that people can find other Spaces I am hosting
-+ So that I can host multiple Spaces in my name
+and So that I can host multiple Spaces in my name
 I would like to be able to create a user account
 
 -----EXTENSION-----
