@@ -3,6 +3,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative 'lib/space'
+require_relative 'lib/profile'
 
 class MakersBnb < Sinatra::Base
   enable :sessions
@@ -11,8 +12,13 @@ class MakersBnb < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/test' do
-    'Test page'
+  post '/profile' do
+    erb(:profile)
+  end
+
+  post '/profileview' do
+     @profile = Profile.profile(params{:username})
+    erb(:listing)
   end
 
   get '/login' do
@@ -33,7 +39,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/' do
-    Space.create(params[:name], params[:description], params[:price_per_night])
+    Space.create(params[:name], params[:description], params[:price_per_night], params[:username] )
     redirect('/')
   end
 
