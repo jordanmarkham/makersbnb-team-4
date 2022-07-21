@@ -1,31 +1,52 @@
-<div style="text-align: right">
-  <form>
-    <button value="About" type="submit"></button>
-    <button value="Sign Up" type="submit"></button>
-    <button value="Sign In" type="submit"></button>
-  </form>
-</div>
+<% if(@formtype == 'signup') %>
+  <div style="text-align: right">
+    <form action="/login" method="get">
+      <button value="Submit" type="submit">Login</button>
+    </form>
+  </div>
 
-<div>
-<h1>Feel at home, anywhere</h1>
-</div>
+  <div>
+    <h1>Feel at home, anywhere</h1>
+  </div>
 
-<div style="text-align: center">
-  <h1>Sign up to MakersBnb</h1>
+  <div style="text-align: center">
+    <h1>Sign up to MakersBnb</h1>
 
-  <form action="/signup" method="post">
-    <label for="username">Username</label>
-    <input name="username" type="text" placeholder="Enter username..."/>
-    <label for="firstname">First Name</label>
-    <input name="firstname" type="text" placeholder="Enter Your First Name..."/>
-    <label for="lastname">Last Name</label>
-    <input name="lastname" type="text" placeholder="Enter Your Last Name..."/>
-    <label for="email">Email</label>
-    <input name="email" type="email" placeholder="Email"/>
-    <label for="password">Password</label>
-    <input name="password" type="password" placeholder="Password"/>
-    <label for="password_confirmation">Confirm Password</label>
-    <input name="password_confirmation" type="password" placeholder="Confirm Password"/>
-    <button value="Submit" type="submit">Sign up</button>
-</form>
-<div>
+    <form action="/signup" method="post">
+      <label for="username">Username</label>
+      <input name="username" type="text" placeholder="Enter username..."/>
+      <label for="firstname">First Name</label>
+      <input name="firstname" type="text" placeholder="Enter Your First Name..."/>
+      <label for="lastname">Last Name</label>
+      <input name="lastname" type="text" placeholder="Enter Your Last Name..."/>
+      <label for="email">Email</label>
+      <input name="email" type="email" placeholder="Email"/>
+      <label for="password">Password</label>
+      <input name="password" type="password" placeholder="Password"/>
+      <label for="password_confirmation">Confirm Password</label>
+      <input name="password_confirmation" type="password" placeholder="Confirm Password"/>
+      <button value="Submit" type="submit">Sign up</button>
+    </form>
+  <div>
+<% elsif(@formtype == 'login') %>
+  <div style="text-align: right">
+    <form action="/signup" method="get">
+      <button value="Submit" type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <div style="text-align: center">
+    <h1>Log in to MakersBnb</h1>
+    <% if(@success == 'error') %>
+      <h3>The information provided is not correct. Please try again.</h3>
+    <% end %>
+
+    <form action="/login" method="post">
+      <label for="email">Email</label>
+      <input name="email" type="email" placeholder="Email"/>
+      <label for="password">Password</label>
+      <input name="password" type="password" placeholder="Password"/>
+      <button value="Submit" type="submit">Login</button>
+    </form>
+  <div>
+<% end %>
