@@ -2,13 +2,6 @@ require 'pg'
 
 class User
 
-  # def self.login(username, email, password)
-  #   session[:username] = username
-  #   session[:email] = email
-  #   session[:password] = password
-  #   session[:logged_in?] = true
-  # end
-
   # def self.logout
   #   session[:username] = nil
   #   session[:email] = nil
