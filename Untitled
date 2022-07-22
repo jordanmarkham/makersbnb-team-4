@@ -1,0 +1,71 @@
+body {
+  padding-top: 100px;
+}
+
+hr {
+  border-color: grey;
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 1.5px;
+  max-width: 50%;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#id {
+  position: absolute;
+  text-align: center;
+  margin-top: 0;
+}
+
+input {
+  border: 1px solid #5b5a5a;
+  border-radius: 3px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+label {
+  font-family: "Montserrat", sans-serif;
+}
+
+.email_password {
+  text-align: right;
+  width: 350px;
+  height: 150px;
+  margin: 10px auto 50px;
+  padding: 25px;
+  border: 5px solid black;
+}
+
+.form_container {
+  border: 1px solid black;
+  padding: 24px 24px 24px 64px;  
+  position: relative;
+  text-align: right;text-aligntext-align
+}
+
+.header {
+  text-align: right;
+}
+.home_page {
+  padding: 80px auto;
+}
+
+.login_form_container {
+  border-radius: 4px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  margin: 40px 100px;
+  padding: 60px;
+  text-align: center;
+}

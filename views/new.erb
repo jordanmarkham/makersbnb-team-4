@@ -1,11 +1,39 @@
-<div style="text-align: center">
-  <h1>Upload a new Space:</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Makers Bnb - Team 4</title>
+  <link href=" <%= url('/style.css') %>" rel="stylesheet" type="text/css" />  
+</head>
 
-  <form action="/" method="post">
-    <input name="name" type="text" placeholder="Enter name here..."/>
-    <input name="description" type="text" placeholder="Write a brief description (600 characters max)..."/>
-    <input name="price_per_night" type="text" placeholder="Enter a price/night..."/>
-    <button value="Submit" type="submit">Create Listing</button>
-  </form>
+<body>
+  <div class="new_space_container"style="text-align: center">
+    <h1>Upload a new Space:</h1>
 
-</div>
+      <div>
+        <form action="/create" method="post" class="new_space_form">
+          <div>
+            <label for="name">Name</label>
+          </div>
+          <div class="space_name">
+            <input name="name" type="text" placeholder="Enter name here..."/>
+          </div>
+          <br />
+          <div>
+            <label for="description">Description</label>
+          </div>
+          <div class="space_description">
+            <textarea name="description" type="text" placeholder="Write a brief description (600 characters max)..."  rows="5" cols="33"></textarea>
+          </div>
+          <br />
+          <div>
+            <label for="price_per_night">Price per night (£)</label>
+          </div>
+          <div>
+            <input name="price_per_night" type="text" placeholder="Enter a price/night..."/>
+          </div>
+          <br />
+          <div>
+            <button value="Submit" type="submit" class="button">Create Listing</button>
+          </div>
+        </form>
+  </div>
+</body>

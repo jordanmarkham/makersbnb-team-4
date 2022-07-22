@@ -1,12 +1,15 @@
+
+
 require 'pg'
 
 class User
 
-  def self.login(session)
-  end
-
-  def self.logout(session)
-  end
+  # def self.logout
+  #   session[:username] = nil
+  #   session[:email] = nil
+  #   session[:password] = nil
+  #   session[:logged_in?] = false
+  # end
 
   def self.signup(username, firstname, lastname, email, password)
     if ENV['ENVIRONMENT'] == 'test'
@@ -15,8 +18,7 @@ class User
       connection = PG.connect(dbname: 'makersbnb')
     end
 
-    connection.exec "INSERT INTO users (username, firstname, lastname, email, password) VALUES ('#{username}', '#{firstname}', '#{lastname}', '#{email}', '#{password}');"
+    connection.exec "INSERT INTO users (username, firstname, lastname, email, passkey) VALUES ('#{username}', '#{firstname}', '#{lastname}', '#{email}', '#{password}');"
   end
-
 
 end

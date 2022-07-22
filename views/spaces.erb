@@ -1,0 +1,41 @@
+<head>
+  <meta charset="utf-8">
+  <title>Makers Bnb - Spaces</title>
+  <link href=" <%= url('/style.css') %>" rel="stylesheet" type="text/css" />  
+</head>
+
+<body>
+  <div class="spaces_container" style="text-align: center">
+    <% if @success %>
+
+      <h2>Thank you for registering with us, <%= session['username'] %>.</h2>
+    
+    <% end %>
+
+    <h1>MakersBnb:</h1>
+
+    <% if session['logged_in?'] == true %>
+
+      <form action="/logout" method="post">
+        <button value="Submit" type="submit" class="button">Logout</button>
+      </form>
+
+    <% else %>
+
+      <form action="/signup" method="get">
+        <button value="Submit" type="submit" class="button">Login or Sign Up</button>
+      </form>
+
+  <% end %>
+
+    <form action="/spaces/new" method="post">
+      <button value="Submit" type="submit" class="button">Create Listing</button>
+    </form>
+
+    <h2 class="all_spaces_header">All Spaces:</h2>
+
+    <div><%= @all_spaces.join("<hr>") %></div>
+
+
+  </div>
+</body>

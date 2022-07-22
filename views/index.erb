@@ -1,12 +1,125 @@
-<div style="text-align: center">
-  <h1>MakersBnb:</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Makers Bnb - Team 4</title>
+  <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />  
+</head>
 
-  <form action="/new" method="post">
-    <button value="Submit" type="submit">Create Listing</button>
-  </form>
+<body>
 
-  <h3>All Spaces:</h3>
+  <div class="body_container">
+    <% if(@formtype == 'signup') %>
+      <div style="text-align: right">
+        <form action="/login" method="get">
+          <button value="Submit" type="submit" class="button">Login</button>
+        </form>
+      </div>
 
-  <%= @all_spaces.join("<hr>") %>
+        <div class="find_places">
+          <h1>Find places to stay on MakersBnb</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu rutrum urna, in pellentesque mi. Mauris commodo convallis varius. Nam erat nisi, congue et aliquet placerat, scelerisque ut metus. Maecenas vehicula lacus ut lacus auctor molestie.</p>
+        </div>
 
-</div>
+          <h2>Sign up to MakersBnb</h2>
+
+          <div class="sign_up_form" style="text-align: center">
+            <form action="/signup" method="post" class="signup_form">
+              <p>
+                <div class="label">
+                  <label for="username">Username</label>
+                </div>
+                <div>
+                  <input name="username" type="text" placeholder="Enter username..."/>
+                </div>
+              </p>
+              <p>        
+                <div>
+                  <label for="firstname">First Name</label>
+                </div>
+                <div>
+                  <input name="firstname" type="text" placeholder="Enter Your First Name..."/>
+                </div>
+                <div>
+              </p>
+              <p>
+                <div>
+                  <label for="lastname">Last Name</label>
+                </div>
+                <div>
+                  <input name="lastname" type="text" placeholder="Enter Your Last Name..."/>
+                </div>
+                <div>
+              </p>
+              <p>
+                <div>
+                  <label for="email">Email Address</label>
+                </div>
+                <div>
+                  <input name="email" type="email" placeholder="Email"/>
+                </div>
+                <div>
+              </p>
+              <p>
+                <div>
+                  <label for="password">Password</label>
+                </div>
+                <div>
+                  <input name="password" type="password" placeholder="Password"/>
+                </div>
+                <div>
+              </p>
+              <p>
+                <div>
+                  <label for="password_confirmation">Confirm Password</label>
+                </div>
+                <div>
+                  <input name="password_confirmation" type="password" placeholder="Confirm Password"/>
+                </div>
+                <div>
+              </p>
+              <p>
+                <div>
+                <button value="Submit" type="submit" class="button">Sign up</button>
+                </div>
+              </p>
+            </form>
+          <div>
+    <% elsif(@formtype == 'login') %>
+      <div style="text-align: right">
+        <form action="/signup" method="get">
+          <button value="Submit" type="submit" class="button">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="login_form_container" style="text-align: center">
+        <h1>Log in to MakersBnb</h1>
+        <% if(@success == 'error') %>
+          <h3>The information provided is not correct. Please try again.</h3>
+        <% end %>
+
+      <div style="text-align: center">
+        <form action="/login" method="post" class="login_form">
+          <div>
+            <label for="email">Email Address</label>
+          </div>
+          <div>
+            <input name="email" type="email" placeholder="Email"/>
+          </div>
+        <br />
+          <div>
+            <label for="password">Password</label>
+          </div>
+          <div>
+            <input name="password" type="password" placeholder="Password"/>
+          </div>
+        <br />
+          <div>
+            <button value="Submit" type="submit" class="button">Login</button>
+          </div>
+        </form>
+      </div>
+      <div>
+    <% end %>
+  </div>
+</body>
+
+
