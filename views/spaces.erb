@@ -1,26 +1,50 @@
-<div style="text-align: center">
-  <% if @success %>
-    <h2>Thank you for registering with us, <%= session['username'] %>.</h2>
-  <% end %>
+<head>
+  <meta charset="utf-8">
+  <title>Spaces - MakersBnb</title>
+  <link href=" <%= url('/style.css') %>" rel="stylesheet" type="text/css" />  
+</head>
 
-  <h1>MakersBnb:</h1>
+<body>
+  <div style="text-align: right; margin-top: 15px; margin-right: 20px;">
+    <% if session['status'] == true %>
 
-  <% if session['logged_in?'] == true %>
     <form action="/logout" method="post">
-      <button value="Submit" type="submit">Logout</button>
+      <button value="Submit" type="submit" class="button">Logout</button>
     </form>
-  <% else %>
+
+    <% else %>
+
     <form action="/signup" method="get">
-      <button value="Submit" type="submit">Login or Sign Up</button>
+      <button value="Submit" type="submit" class="button">Login or Sign Up</button>
     </form>
-<% end %>
 
-  <form action="/spaces/new" method="post">
-    <button value="Submit" type="submit">Create Listing</button>
-  </form>
+    <% end %>
+  </div>
 
-  <h3>All Spaces:</h3>
+  <div class="spaces_container" style="text-align: center">
+    <% if @signup == 'success' %>
+      <h2>Thank you for registering with us, <%= session['username'] %>.</h2>
+    <% elsif @page == 'notfound' %>
+      <h2>The page you were looking for could not be found.</h2>
+    <% elsif @booking == 'success' %>
+      <h2>Your booking was successful!</h2>
+    <% end %>
 
-  <%= @all_spaces.join("<hr>") %>
+    <h1>MakersBnb:</h1>
 
-</div>
+    <form action="/profile" method="get">
+      <button value="Submit" type="submit" class="button">My Spaces</button>
+    </form>
+
+
+    <form action="/spaces/new" method="post">
+      <button value="Submit" type="submit" class="button">Create Listing</button>
+    </form>
+
+    <h2 class="all_spaces_header">All Spaces:</h2>
+
+    <div><%= @all_spaces.join("<hr>") %></div>
+
+
+  </div>
+</body>

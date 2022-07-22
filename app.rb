@@ -12,15 +12,11 @@ class MakersBnb < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/test' do
-    'Test page'
-  end
-
   get '/' do
     @formtype = params['form']
     @formtype = 'signup' if @formtype == nil
-    @success = params['login']
-    session[:logged_in?] == true ? redirect('/spaces') : erb(:index)
+    @login = params['login']
+    session[:status] == true ? redirect('/spaces') : erb(:index)
   end
 
   get '/signup' do
@@ -51,22 +47,56 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/spaces' do
-    @success = params['signup']
+    @signup = params['signup']
+    @booking = params['booking']
+    @page = params['page']
     @all_spaces = Space.all
     erb(:spaces)
   end
 
   get '/spaces/new' do
-    session[:logged_in?] == true ? erb(:new) : redirect('/')
+    session[:status] == true ? erb(:new) : redirect('/')
   end
 
   post '/spaces/new' do
-    session[:logged_in?] == true ? erb(:new) : redirect('/')
+    session[:status] == true ? erb(:new) : redirect('/')
   end
 
   post '/create' do
     Space.create(params[:name], params[:description], params[:price_per_night], session[:username])
     redirect('/spaces')
+  end
+
+  get '/profile' do
+    if session[:status] == true
+      @your_spaces = User.view_spaces(session[:username])
+      erb(:profile)
+    else
+      redirect('/')
+    end
+  end
+
+  get '/spaces/view' do
+    params[:id]
+    @current_space = Space.find(params[:id].gsub('-', ' '))
+    erb(:space)
+  end
+
+  post '/spaces/view' do
+    redirect("/spaces/view?id=#{params[:name].gsub(' ', '-')}")
+  end
+
+  get '/book' do
+    redirect("/spaces?page=notfound")
+  end
+
+  post '/book' do
+    if session[:status] == true
+      Space.book(params[:name], session[:username])
+      redirect("/spaces?booking=success")
+    else
+      redirect('/')
+    end
   end
 
   def login(email, password)
@@ -77,7 +107,7 @@ class MakersBnb < Sinatra::Base
       session[:username] = result[0]['username']
       session[:email] = result[0]['email']
       session[:password] = result[0]['passkey']
-      session[:logged_in?] = true
+      session[:status] = true
       return true
     else
       return false
@@ -88,7 +118,7 @@ class MakersBnb < Sinatra::Base
     session[:username] = nil
     session[:email] = nil
     session[:password] = nil
-    session[:logged_in?] = false
+    session[:status] = false
   end
 
   run! if app_file == $PROGRAM_NAME
